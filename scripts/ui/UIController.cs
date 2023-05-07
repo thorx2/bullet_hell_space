@@ -1,3 +1,5 @@
+namespace BulletGame;
+
 public partial class UIController : CanvasLayer
 {
 	// Called when the node enters the scene tree for the first time.

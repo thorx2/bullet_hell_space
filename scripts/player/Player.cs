@@ -1,3 +1,5 @@
+namespace BulletGame;
+
 public partial class Player : RigidBody2D
 {
     [Export] private int Speed = 400;
