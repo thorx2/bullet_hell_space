@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://4ps0yk06upa0"]
+[gd_scene load_steps=4 format=3 uid="uid://4ps0yk06upa0"]
 
 [ext_resource type="Script" path="res://scripts/manager/GameWorld.cs" id="1_qkty3"]
 [ext_resource type="PackedScene" uid="uid://cwo86ok5i7hs" path="res://scenes/ui_container.tscn" id="2_aipk3"]
+[ext_resource type="PackedScene" uid="uid://brhmk20gnmubi" path="res://scripts/player/Player.tscn" id="3_pngcs"]
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource("1_qkty3")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("2_aipk3")]
+
+[node name="PlayerRigidBody" parent="." instance=ExtResource("3_pngcs")]
+position = Vector2(316, 862)
