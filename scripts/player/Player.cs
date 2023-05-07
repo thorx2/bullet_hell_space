@@ -8,10 +8,13 @@ public partial class Player : RigidBody2D
     private Vector2 _screenSize;
     private Vector2 _modelSize;
 
+    private BulletPoolManager _bulletPoolManager;
+
     public override void _Ready()
     {
         _screenSize = GetViewportRect().Size;
         _modelSize = _shipImage.GetRect().Size * _shipImage.GlobalScale;
+        _bulletPoolManager = BulletPoolManager.Instance;
     }
 
     public override void _Process(double delta)
