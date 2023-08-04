@@ -1,5 +1,4 @@
-using Godot;
-using System;
+namespace BulletGame;
 
 public partial class UIController : CanvasLayer
 {
