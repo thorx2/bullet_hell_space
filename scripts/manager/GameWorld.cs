@@ -12,7 +12,7 @@ public partial class GameWorld : Node2D
     [Export] private Vector2 _scrollSpeed;
     public override void _Ready()
     {
-        BulletPoolManager.Instance.SetBulletScene(_bulletScene);
+        BulletPoolManager.Instance.SetBulletScene(_bulletScene, this);
     }
 
     public override void _Process(double delta)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwkdqso7m1y3v"]
+
+[ext_resource type="Script" path="res://scripts/weapons/Bullet.cs" id="1_4kgjw"]
+[ext_resource type="Texture2D" uid="uid://cqb786l8llxb5" path="res://art/projectile_sprite_sheets/beams.png" id="2_mgswb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i7p0d"]
+
+[node name="Projectile" type="RigidBody2D" node_paths=PackedStringArray("_onScreenNotifier", "_bulletSprite")]
+script = ExtResource("1_4kgjw")
+_bulletVelocity = Vector2(0, -25)
+_onScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
+_bulletSprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i7p0d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mgswb")
+region_enabled = true
+region_rect = Rect2(81, 315, 31, 58)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

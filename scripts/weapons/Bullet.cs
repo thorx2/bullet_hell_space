@@ -1,11 +1,11 @@
-using Godot;
-using System;
-
+namespace BulletGame;
 public partial class Bullet : RigidBody2D
 {
     [Export] private Vector2 _bulletVelocity = Vector2.Zero;
 
     [Export] private VisibleOnScreenNotifier2D _onScreenNotifier;
+
+    [Export] private Sprite2D _bulletSprite;
 
     public override void _Process(double delta)
     {
@@ -14,5 +14,10 @@ public partial class Bullet : RigidBody2D
         {
             BulletPoolManager.Instance.DeactivateBullet(this);
         }
+    }
+
+    public float BulletHeight()
+    {
+        return (_bulletSprite.GetRect().Size * _bulletSprite.GlobalScale).Y;
     }
 }
