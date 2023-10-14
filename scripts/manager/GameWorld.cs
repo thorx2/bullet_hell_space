@@ -1,5 +1,6 @@
 global using Godot;
 global using System;
+using System.Diagnostics;
 
 namespace BulletGame;
 
@@ -7,16 +8,12 @@ public partial class GameWorld : Node2D
 {
     [Export] private PackedScene _bulletScene;
 
-    [Export] private ParallaxBackground _background;
+    [Export] private PackedScene _playerScene;
 
-    [Export] private Vector2 _scrollSpeed;
+    [Export] private Node2D _spawnLocation;
+    
     public override void _Ready()
     {
         BulletPoolManager.Instance.SetBulletScene(_bulletScene, this);
-    }
-
-    public override void _Process(double delta)
-    {
-        _background.ScrollOffset += _scrollSpeed * (float) delta;
     }
 }

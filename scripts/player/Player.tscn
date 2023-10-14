@@ -6,12 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpbx5"]
 size = Vector2(161, 94)
 
-[node name="PlayerRigidBody" type="RigidBody2D" node_paths=PackedStringArray("_shipImage")]
-gravity_scale = 0.0
-linear_damp_mode = 1
-linear_damp = 2.5
+[node name="ShipBase" type="CharacterBody2D" node_paths=PackedStringArray("_shipImage", "_muzzle")]
+collision_mask = 12
 script = ExtResource("1_17m6w")
+Drag = 50
 _shipImage = NodePath("Sprite2D")
+_muzzle = NodePath("Muzzle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 4)
@@ -21,3 +21,6 @@ shape = SubResource("RectangleShape2D_fpbx5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_d8rrx")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(0, -47)

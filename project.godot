@@ -21,7 +21,7 @@ window/size/viewport_width=648
 window/size/viewport_height=980
 window/size/resizable=false
 window/size/borderless=true
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/handheld/orientation=1
 window/vsync/vsync_mode=2
 
@@ -71,6 +71,7 @@ shoot_special={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Projectiles"
 2d_physics/layer_3="Enemy"
+2d_physics/layer_4="WorldEdge"
 
 [rendering]
 

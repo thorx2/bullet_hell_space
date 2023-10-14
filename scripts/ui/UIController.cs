@@ -2,13 +2,28 @@ namespace BulletGame;
 
 public partial class UIController : CanvasLayer
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+
+	[Signal] public delegate void StartGameNowEventHandler();
+
+	[Export] private Control _mainMenuControl;
+	[Export] private Control _settingsPanel;
+	[Export] private Label _titleLabel;
+
+	public void StartGameHit()
 	{
+		EmitSignal(SignalName.StartGameNow);
+		_mainMenuControl.Visible = false;
+		_titleLabel.Visible = false;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public void SettingsButtonsHit()
 	{
+		_settingsPanel.Visible = true;
+		_mainMenuControl.Visible = false;
+	}
+
+	public void ExitGame()
+	{
+		GetTree().Quit();
 	}
 }
