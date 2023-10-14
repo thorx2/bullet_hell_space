@@ -3,20 +3,26 @@
 [ext_resource type="Script" path="res://scripts/weapons/Bullet.cs" id="1_4kgjw"]
 [ext_resource type="Texture2D" uid="uid://cqb786l8llxb5" path="res://art/projectile_sprite_sheets/beams.png" id="2_mgswb"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i7p0d"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_280wl"]
 
-[node name="Projectile" type="RigidBody2D" node_paths=PackedStringArray("_onScreenNotifier", "_bulletSprite")]
+[node name="Projectile" type="CharacterBody2D" node_paths=PackedStringArray("_onScreenNotifier")]
+collision_layer = 2
+collision_mask = 4
+motion_mode = 1
 script = ExtResource("1_4kgjw")
-_bulletVelocity = Vector2(0, -25)
+_bulletVelocity = Vector2(0, -500)
 _onScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
-_bulletSprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_i7p0d")
+shape = SubResource("CircleShape2D_280wl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_mgswb")
 region_enabled = true
-region_rect = Rect2(81, 315, 31, 58)
+region_rect = Rect2(82.3792, 177.406, 23.9181, 24.9992)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 17)
+scale = Vector2(0.4, 0.4)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="OnScreenExited"]

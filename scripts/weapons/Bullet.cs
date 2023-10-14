@@ -1,23 +1,23 @@
+using System.Diagnostics;
+
 namespace BulletGame;
-public partial class Bullet : RigidBody2D
+
+public partial class Bullet : CharacterBody2D
 {
     [Export] private Vector2 _bulletVelocity = Vector2.Zero;
 
     [Export] private VisibleOnScreenNotifier2D _onScreenNotifier;
 
-    [Export] private Sprite2D _bulletSprite;
-
     public override void _Process(double delta)
     {
-        Translate(_bulletVelocity * (float)delta);
-        if (!_onScreenNotifier.IsOnScreen())
+        if (Visible)
         {
-            BulletPoolManager.Instance.DeactivateBullet(this);
+            Translate(_bulletVelocity * (float)delta);
         }
     }
 
-    public float BulletHeight()
+    public void OnScreenExited()
     {
-        return (_bulletSprite.GetRect().Size * _bulletSprite.GlobalScale).Y;
+        BulletPoolManager.Instance.DeactivateBullet(this);
     }
 }
