@@ -1,23 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://brhmk20gnmubi"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_17m6w"]
-[ext_resource type="Texture2D" uid="uid://2cweyqwycp0n" path="res://art/Example_ships/13.png" id="2_d8rrx"]
+[ext_resource type="Texture2D" uid="uid://bvywvqt6sdyql" path="res://art/Example_ships/1.png" id="2_cowbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpbx5"]
-size = Vector2(161, 94)
+size = Vector2(128, 140)
 
-[node name="PlayerRigidBody" type="RigidBody2D" node_paths=PackedStringArray("_shipImage")]
+[node name="PlayerRigidBody" type="RigidBody2D"]
 gravity_scale = 0.0
 linear_damp_mode = 1
 linear_damp = 2.5
 script = ExtResource("1_17m6w")
-_shipImage = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 4)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_fpbx5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_d8rrx")
+texture = ExtResource("2_cowbt")

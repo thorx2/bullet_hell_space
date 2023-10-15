@@ -2,37 +2,31 @@ namespace BulletGame;
 
 public partial class Player : RigidBody2D
 {
-    [Export] private int Speed = 400;
-    [Export] private Sprite2D _shipImage;
+    [Export] int speed = 400;
 
-    private Vector2 _screenSize;
-    private Vector2 _modelSize;
-
-    private BulletPoolManager _bulletPoolManager;
+    BulletPoolManager bulletPoolManager;
 
     public override void _Ready()
     {
-        _screenSize = GetViewportRect().Size;
-        _modelSize = _shipImage.GetRect().Size * _shipImage.GlobalScale;
-        _bulletPoolManager = BulletPoolManager.Instance;
+        bulletPoolManager = BulletPoolManager.Instance;
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var dir = Input.GetVector("move_left", "move_right", "move_up", "move_down");
+        Movement();
+    }
 
-		if (dir != Vector2.Zero)
-            LinearVelocity = dir.Normalized() * Speed;
+    void Movement()
+    {
+        Vector2 inputDirection = Input.GetVector(
+            negativeX: "move_left",
+            positiveX: "move_right",
+            negativeY: "move_up",
+            positiveY: "move_down");
 
-        if (Position.X < _modelSize.X / 2 || Position.X > _screenSize.X - _modelSize.X / 2 ||
-            Position.Y < _modelSize.Y / 2 || Position.Y > _screenSize.Y - _modelSize.Y / 2)
-        {
-            LinearVelocity = Vector2.Zero;
-
-            Position = new Vector2(
-                x: Mathf.Clamp(Position.X, _modelSize.X / 2, _screenSize.X - _modelSize.X / 2),
-                y: Mathf.Clamp(Position.Y, _modelSize.Y / 2, _screenSize.Y - _modelSize.Y / 2)
-            );
-        }
+        // Only apply velocity when movement keys are pressed
+        if (inputDirection != Vector2.Zero)
+            // Normalized to prevent faster diagonal movement
+            LinearVelocity = inputDirection.Normalized() * speed;
     }
 }
