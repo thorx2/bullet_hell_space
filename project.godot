@@ -12,16 +12,19 @@ config_version=5
 
 config/name="SpaceInvadersAgain"
 run/main_scene="res://scenes/game_world.tscn"
-config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=648
+window/size/viewport_width=540
 window/size/viewport_height=980
 window/size/resizable=false
 window/size/borderless=true
+window/size/window_width_override=540
+window/size/window_height_override=980
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 window/vsync/vsync_mode=2
 
@@ -32,6 +35,10 @@ project/assembly_name="SpaceInvadersAgain"
 [editor_plugins]
 
 enabled=PackedStringArray()
+
+[gui]
+
+theme/default_font_subpixel_positioning=0
 
 [input]
 
@@ -75,4 +82,8 @@ shoot_special={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

@@ -27,10 +27,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -212.5
-offset_top = -287.999
-offset_right = 212.5
-offset_bottom = -203.999
+offset_left = -187.0
+offset_top = -302.0
+offset_right = 187.0
+offset_bottom = -181.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_to2iy")
@@ -48,10 +48,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -86.0
-offset_top = -82.0
-offset_right = 86.0
-offset_bottom = 68.0
+offset_left = -100.0
+offset_top = -75.0
+offset_right = 100.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gkyx4")
@@ -67,17 +67,17 @@ theme_override_constants/separation = 10
 alignment = 1
 
 [node name="StartGame" type="Button" parent="MainMenu/MainMenu/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme = ExtResource("2_to2iy")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 28
 text = "Start"
 
 [node name="Settings" type="Button" parent="MainMenu/MainMenu/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme = ExtResource("2_to2iy")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 28
 text = "Settings"
 
 [node name="SettingsPanel" type="Panel" parent="MainMenu"]
@@ -88,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -238.0
-offset_top = -226.0
-offset_right = 238.0
-offset_bottom = 226.0
+offset_left = -115.0
+offset_top = -135.0
+offset_right = 115.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -100,28 +100,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 18.0
-offset_right = -10.0
-offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="Label" type="Label" parent="MainMenu/SettingsPanel/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
 theme = ExtResource("2_to2iy")
 theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 26
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/SettingsPanel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 65)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
@@ -136,12 +130,11 @@ text = "Music Volume"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
 value = 100.0
 rounded = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MainMenu/SettingsPanel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 65)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
@@ -153,16 +146,14 @@ theme = ExtResource("2_to2iy")
 text = "SFX Volume"
 
 [node name="HSlider" type="HSlider" parent="MainMenu/SettingsPanel/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
 value = 100.0
 rounded = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MainMenu/SettingsPanel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 65)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
@@ -170,7 +161,6 @@ alignment = 1
 [node name="Label" type="Label" parent="MainMenu/SettingsPanel/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
 theme = ExtResource("2_to2iy")
 text = "Enable analytics"
 
@@ -179,7 +169,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MainMenu/SettingsPanel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 65)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
@@ -187,7 +177,6 @@ alignment = 1
 [node name="Label" type="Label" parent="MainMenu/SettingsPanel/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
 theme = ExtResource("2_to2iy")
 text = "Enable Ads"
 
@@ -197,11 +186,10 @@ size_flags_horizontal = 3
 
 [node name="Credits" type="Label" parent="MainMenu/SettingsPanel/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 theme = ExtResource("2_to2iy")
 theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 18
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1

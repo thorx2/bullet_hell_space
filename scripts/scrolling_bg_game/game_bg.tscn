@@ -13,18 +13,20 @@ _ScrollSpeed = 40.0
 
 [node name="Space" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(324, 490)
-motion_scale = Vector2(0, 0.1)
-motion_mirroring = Vector2(0, 978)
+motion_scale = Vector2(0, 0.05)
+motion_mirroring = Vector2(0, 1075)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Space"]
-scale = Vector2(0.318359, 0.636719)
+position = Vector2(-50, 2)
+scale = Vector2(0.3, 0.7)
 texture = ExtResource("2_5xvu2")
 
 [node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(324, 490)
-motion_scale = Vector2(0, 0.5)
-motion_mirroring = Vector2(0, 978)
+motion_scale = Vector2(0, 0.25)
+motion_mirroring = Vector2(0, 1100)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
-scale = Vector2(0.632812, 0.963488)
+position = Vector2(-55, 0)
+scale = Vector2(0.7, 1)
 texture = ExtResource("3_asscb")
